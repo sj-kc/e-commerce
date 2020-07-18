@@ -1,6 +1,7 @@
 const {
   commerce: { color, department, productName, price, product },
   random: { uuid },
+  lorem: { lines },
 } = require("faker");
 
 export default () => {
@@ -14,6 +15,7 @@ export default () => {
       productName: productName(),
       price: price(),
       product: product(),
+      description: lines(),
     });
   }
 

@@ -5,6 +5,7 @@ import configStore from "./store/store";
 import { fetchProducts } from "./store/actions/products";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import "./index.css";
 
 const store = configStore();
 
