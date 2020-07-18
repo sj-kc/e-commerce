@@ -1,24 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
+import selectProducts from "../selectors/products";
+import Navbar from './Navbar';
+import Pagination from './Pagination';
+import ListProducts from "./ListProducts";
 
 const Products = ({ products }) => {
-    console.log(products);
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const [productsPerPage] = useState(10)
+
+    const lastProducts = currentPage * productsPerPage;
+    const firstProducts = lastProducts - productsPerPage;
+    const currentProducts = products.slice(firstProducts, lastProducts)
+
+    const onPaginate = (pageNumber) => setCurrentPage(pageNumber)
+
     return (
         <React.Fragment>
-            {products.map((product) => {
-                return (
-                    <div key={product.id}>
-                        <p>{product.color}</p>
-                    </div>
-                );
-            })}
+            <Navbar />
+            {currentProducts.map((product) =>
+                <ListProducts product={product} key={product.id} />
+            )}
+            <Pagination productsPerPage={productsPerPage} totalProducts={products.length} onPaginate={onPaginate} />
         </React.Fragment>
     );
 };
 
 const mapToProps = (state) => {
     return {
-        products: state.products[0],
+        products: selectProducts(state.products[0], state.filters),
     };
 };
 
