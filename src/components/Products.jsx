@@ -16,6 +16,7 @@ const Products = ({ products }) => {
 
     const onPaginate = (pageNumber) => setCurrentPage(pageNumber)
 
+
     return (
         <React.Fragment>
             <Navbar />

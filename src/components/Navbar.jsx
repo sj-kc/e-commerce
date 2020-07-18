@@ -1,11 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setText } from './../store/actions/filters';
+import { setText, setDepartment, setColor } from './../store/actions/filters';
+import Filters from "./Filters";
 
-
-const Navbar = ({ text, filters }) => {
+const Navbar = ({ text, deparment, color, filters }) => {
     return (
         <div>
+            <Filters />
             <input
                 type="text"
                 placeholder="Search product name"
@@ -13,6 +14,8 @@ const Navbar = ({ text, filters }) => {
                 name="text"
                 onChange={({ target }) => {
                     text(target.value);
+                    deparment()
+                    color()
                 }}
             />
         </div>
@@ -28,6 +31,8 @@ const mapToProps = (state) => {
 const mapDispatch = (dispatch) => {
     return {
         text: (text) => dispatch(setText(text)),
+        deparment: () => dispatch(setDepartment()),
+        color: () => dispatch(setColor()),
     };
 };
 
