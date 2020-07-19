@@ -16,6 +16,7 @@ export default () => {
       price: price(),
       product: product(),
       description: lines(),
+      item: 0,
     });
   }
 
