@@ -1,0 +1,44 @@
+.sidebar {
+  margin: 0;
+  padding: 1rem;
+  padding-top: 0;
+  list-style-type: none;
+  width: 80%;
+  display: block;
+  margin-left: 21px;
+}
+
+.sidebar__links {
+  display: block;
+  border-color: transparent;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 45px;
+}
+
+.sidebar__links__link:hover {
+  color: rgb(222, 7, 113);
+}
+
+.sidebar__links__link {
+  line-height: 1.7rem;
+  color: #172b4d;
+  border: 2px solid transparent;
+  outline: none;
+  transition: all 0.1s ease;
+  text-decoration: none;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}

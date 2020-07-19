@@ -1,18 +1,23 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import styles from "./styles/Pagination.module.css"
 
 const Pagination = ({ productsPerPage, totalProducts, onPaginate }) => {
     const pageNumbers = [];
-
     for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
         pageNumbers.push(i)
     }
-
     return (
-        <div>
+        <div className="mt-10 text-center">
             {
                 pageNumbers.map(number => {
-                    return <a href="!#" key={number} onClick={() => onPaginate(number)}>{number}</a>
+                    return <Link
+                        className={`${styles.link}`}
+                        to="/"
+                        key={number}
+                        onClick={() => onPaginate(number)}>
+                        {number <= 1 ? "" : number}
+                    </Link>
                 })
             }
         </div>

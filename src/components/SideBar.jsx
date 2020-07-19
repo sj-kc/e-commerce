@@ -1,15 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setText, setDepartment, setColor } from './../store/actions/filters';
+import { setText, setDepartment, setColor } from '../store/actions/filters';
 import Filters from "./Filters";
+import style from "./styles/SideBar.module.css"
 
-const Navbar = ({ text, deparment, color, filters }) => {
+const SideBar = ({ text, deparment, color, filters }) => {
+
     return (
-        <div>
-            <Filters />
+        <div className={style.sidebar}>
+            <h1 className="text-center" onClick={() => {
+                deparment();
+                color();
+            }}>Commercesify</h1>
             <input
+                className={`${style.input}`}
                 type="text"
-                placeholder="Search product name"
+                placeholder="Product name"
                 value={filters.text}
                 name="text"
                 onChange={({ target }) => {
@@ -18,6 +24,7 @@ const Navbar = ({ text, deparment, color, filters }) => {
                     color()
                 }}
             />
+            <Filters />
         </div>
     );
 };
@@ -36,4 +43,4 @@ const mapDispatch = (dispatch) => {
     };
 };
 
-export default connect(mapToProps, mapDispatch)(Navbar);
+export default connect(mapToProps, mapDispatch)(SideBar);

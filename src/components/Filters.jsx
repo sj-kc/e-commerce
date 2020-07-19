@@ -1,7 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom"
+import { IconContext } from "react-icons"
+import { FaGuitar, FaTint } from "react-icons/fa"
 import { setDepartment } from '../store/actions/filters';
 import { setColor } from './../store/actions/filters';
+import style from "./styles/Filters.module.css"
 
 
 const Filters = ({ products, deparment, color }) => {
@@ -39,32 +43,72 @@ const Filters = ({ products, deparment, color }) => {
         return collectItems(colors)
     }
 
+    const Guitar = () => {
+        const style = {
+            'fontSize': '15px',
+            'marginTop': '10px',
+            'marginLeft': '2px',
+            'marginRight': '7px',
+            "color": "#de0771"
+        }
+
+        return (
+            <IconContext.Provider value={{ style }}>
+                <FaGuitar />
+            </IconContext.Provider>
+        )
+    }
+
+    const Color = () => {
+        const style = {
+            'fontSize': '15px',
+            'marginTop': '10px',
+            'marginLeft': '2px',
+            'marginRight': '7px',
+            "color": "#de0771"
+        }
+
+        return (
+            <IconContext.Provider value={{ style }}>
+                <FaTint />
+            </IconContext.Provider>
+        )
+    }
 
     return (
         <div>
-            {getDepartments().map(val => {
-                return (
-                    <div key={val.deparment}>
-                        <a href="!#" onClick={() => {
-                            deparment(val.deparment)
-                            color()
-                        }}> {val.deparment} </a>
-                        <span>{val.items}</span>
-                    </div>
-                )
-            })}
-
-            {getColors().map(val => {
-                return (
-                    <div key={val.deparment}>
-                        <a href="!#" onClick={() => {
-                            color(val.deparment)
-                            deparment()
-                        }}> {val.deparment} </a>
-                        <span>{val.items}</span>
-                    </div>
-                )
-            })}
+            <div><h6 className="mb-10 ml-10">{Guitar()}  Department </h6></div>
+            <ul className={style.sidebar}>
+                {getDepartments().map(val => {
+                    return (
+                        <li className={style.sidebar__links} key={val.deparment}>
+                            <Link to="/"
+                                className={style.sidebar__links__link}
+                                onClick={() => {
+                                    deparment(val.deparment)
+                                    color()
+                                }}> {val.deparment} </Link>
+                            <span className={style.badge}>{val.items}</span>
+                        </li>
+                    )
+                })}
+            </ul>
+            <div><h6 className="mb-10 ml-10"> {Color()} Color</h6></div>
+            <ul className={style.sidebar}>
+                {getColors().map(val => {
+                    return (
+                        <li className={style.sidebar__links} key={val.deparment}>
+                            <Link to="/"
+                                className={style.sidebar__links__link}
+                                onClick={() => {
+                                    color(val.deparment)
+                                    deparment()
+                                }}> {val.deparment} </Link>
+                            <span className={style.badge}>{val.items}</span>
+                        </li>
+                    )
+                })}
+            </ul>
         </div>
     );
 }

@@ -4,8 +4,8 @@ import { Provider } from "react-redux";
 import configStore from "./store/store";
 import { fetchProducts } from "./store/actions/products";
 import App from "./App";
-import * as serviceWorker from "./serviceWorker";
 import "./index.css";
+import * as serviceWorker from "./serviceWorker";
 
 const store = configStore();
 
