@@ -1,4 +1,4 @@
-import { setProducts } from "./../../../store/actions/products";
+import { setProducts } from "../../store/actions/products";
 import products from "../fixtures/products";
 
 test("should setup products", () => {

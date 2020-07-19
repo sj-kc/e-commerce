@@ -1,4 +1,4 @@
-import filtersReducer from "../../../store/reducers/filters";
+import filtersReducer from "../../store/reducers/filters";
 
 const defaultState = {
   text: "",

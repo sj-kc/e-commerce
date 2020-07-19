@@ -3,7 +3,7 @@ import {
   setDepartment,
   setColor,
   setPage,
-} from "../../../store/actions/filters";
+} from "../../store/actions/filters";
 
 test("should setup text", () => {
   const action = setText("123abc");
