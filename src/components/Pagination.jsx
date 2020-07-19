@@ -7,6 +7,7 @@ const Pagination = ({ productsPerPage, totalProducts, onPaginate }) => {
     for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
         pageNumbers.push(i)
     }
+
     return (
         <div className="mt-10 text-center">
             {
@@ -15,8 +16,11 @@ const Pagination = ({ productsPerPage, totalProducts, onPaginate }) => {
                         className={`${styles.link}`}
                         to="/"
                         key={number}
-                        onClick={() => onPaginate(number)}>
-                        {number <= 1 ? "" : number}
+                        onClick={() => {
+                            document.querySelector("#content-page").scrollIntoView()
+                            onPaginate(number)
+                        }}>
+                        {pageNumbers.length <= 1 ? '' : number}
                     </Link>
                 })
             }

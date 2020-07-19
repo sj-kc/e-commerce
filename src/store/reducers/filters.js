@@ -4,6 +4,8 @@ const defaultState = {
     department: "",
     color: "",
   },
+  currentPage: 1,
+  productsPerPage: 10,
 };
 
 export default (state = defaultState, action) => {
@@ -30,6 +32,12 @@ export default (state = defaultState, action) => {
           ...state.filter,
           color: action.color,
         },
+      };
+
+    case "SET_PAGE":
+      return {
+        ...state,
+        currentPage: action.page,
       };
 
     default:

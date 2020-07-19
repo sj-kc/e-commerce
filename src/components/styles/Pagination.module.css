@@ -6,6 +6,9 @@
   line-height: 30px;
   text-decoration: none;
 }
+.link:hover {
+  color: rgb(222, 7, 113);
+}
 
 .link:active {
   background-color: #ee6e73;

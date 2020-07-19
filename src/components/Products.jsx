@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import selectProducts from "../selectors/products";
 import SideBar from './SideBar';
 import Pagination from './Pagination';
 import ListProducts from "./ListProducts";
+import { setPage } from "../store/actions/filters";
 
-const Products = ({ products, filters }) => {
-
-    const [currentPage, setCurrentPage] = useState(1)
-    const [productsPerPage] = useState(10)
+const Products = ({ products, filters, currentPage, productsPerPage, setCurrentPage }) => {
 
     const lastProducts = currentPage * productsPerPage;
     const firstProducts = lastProducts - productsPerPage;
     const currentProducts = products.slice(firstProducts, lastProducts)
+
 
     const onPaginate = (pageNumber) => setCurrentPage(pageNumber)
 
@@ -24,7 +23,7 @@ const Products = ({ products, filters }) => {
     return (
         <div>
             <SideBar />
-            <div className="content-page">
+            <div className="content-page" id="content-page">
                 {
                     filters.filter.department || filters.filter.color ?
                         <div>
@@ -49,8 +48,17 @@ const Products = ({ products, filters }) => {
 const mapToProps = (state) => {
     return {
         products: selectProducts(state.products[0], state.filters),
-        filters: state.filters
+        filters: state.filters,
+        currentPage: state.filters.currentPage,
+        productsPerPage: state.filters.productsPerPage,
+
     };
 };
 
-export default connect(mapToProps)(Products);
+const mapDispatchProps = (dispatch) => {
+    return {
+        setCurrentPage: (page) => dispatch(setPage(page))
+    }
+}
+
+export default connect(mapToProps, mapDispatchProps)(Products);

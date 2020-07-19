@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import { Link } from "react-router-dom"
 import { IconContext } from "react-icons"
 import { FaGuitar, FaTint } from "react-icons/fa"
-import { setDepartment } from '../store/actions/filters';
+import { setDepartment, setPage } from '../store/actions/filters';
 import { setColor } from './../store/actions/filters';
 import style from "./styles/Filters.module.css"
 
 
-const Filters = ({ products, deparment, color }) => {
+const Filters = ({ products, deparment, color, setCurrentPage }) => {
 
     const getValues = () => {
         const departments = {}
@@ -87,6 +87,7 @@ const Filters = ({ products, deparment, color }) => {
                                 onClick={() => {
                                     deparment(val.deparment)
                                     color()
+                                    setCurrentPage()
                                 }}> {val.deparment} </Link>
                             <span className={style.badge}>{val.items}</span>
                         </li>
@@ -103,6 +104,7 @@ const Filters = ({ products, deparment, color }) => {
                                 onClick={() => {
                                     color(val.deparment)
                                     deparment()
+                                    setCurrentPage()
                                 }}> {val.deparment} </Link>
                             <span className={style.badge}>{val.items}</span>
                         </li>
@@ -123,6 +125,7 @@ const mapDispatch = (dispatch) => {
     return {
         deparment: (department) => dispatch(setDepartment(department)),
         color: (department) => dispatch(setColor(department)),
+        setCurrentPage: () => dispatch(setPage())
     };
 };
 

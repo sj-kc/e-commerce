@@ -18,3 +18,10 @@ export const setColor = (color = "") => {
     color,
   };
 };
+
+export const setPage = (page = 1) => {
+  return {
+    type: "SET_PAGE",
+    page,
+  };
+};
