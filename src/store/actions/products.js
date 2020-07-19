@@ -1,6 +1,6 @@
 import getProducts from "../../http";
 
-const setProducts = (products = []) => {
+export const setProducts = (products = []) => {
   return {
     type: "SET_PRODUCTS",
     products,
