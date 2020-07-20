@@ -1,4 +1,4 @@
-export const addOrder = (product = {}, value, ordered) => {
+export const addOrder = (product = {}, value) => {
 	return {
 		type: "ADD_ORDER",
 		product: {
