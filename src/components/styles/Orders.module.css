@@ -1,0 +1,22 @@
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    color: #6c757d;
+    border-collapse: collapse;
+}
+
+.order__item {
+    padding-right: 52px;
+    border-right: 1px solid #808080;
+}
+
+.order__quantity {
+    margin-left: 25px;
+}
