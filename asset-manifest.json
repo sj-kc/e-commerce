@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/e-commerce/static/css/main.13a83fec.chunk.css",
-    "main.js": "/e-commerce/static/js/main.0547123e.chunk.js",
-    "main.js.map": "/e-commerce/static/js/main.0547123e.chunk.js.map",
+    "main.js": "/e-commerce/static/js/main.1394f8d2.chunk.js",
+    "main.js.map": "/e-commerce/static/js/main.1394f8d2.chunk.js.map",
     "runtime-main.js": "/e-commerce/static/js/runtime-main.96a20351.js",
     "runtime-main.js.map": "/e-commerce/static/js/runtime-main.96a20351.js.map",
     "static/js/2.ecba633c.chunk.js": "/e-commerce/static/js/2.ecba633c.chunk.js",
     "static/js/2.ecba633c.chunk.js.map": "/e-commerce/static/js/2.ecba633c.chunk.js.map",
     "index.html": "/e-commerce/index.html",
-    "precache-manifest.d8b76e6cee448c11a52252650e4acfa4.js": "/e-commerce/precache-manifest.d8b76e6cee448c11a52252650e4acfa4.js",
+    "precache-manifest.11b196ff6a6c61ae5487abecdf3e8f49.js": "/e-commerce/precache-manifest.11b196ff6a6c61ae5487abecdf3e8f49.js",
     "service-worker.js": "/e-commerce/service-worker.js",
     "static/css/main.13a83fec.chunk.css.map": "/e-commerce/static/css/main.13a83fec.chunk.css.map",
     "static/js/2.ecba633c.chunk.js.LICENSE.txt": "/e-commerce/static/js/2.ecba633c.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.96a20351.js",
     "static/js/2.ecba633c.chunk.js",
     "static/css/main.13a83fec.chunk.css",
-    "static/js/main.0547123e.chunk.js"
+    "static/js/main.1394f8d2.chunk.js"
   ]
 }
