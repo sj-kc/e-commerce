@@ -4,12 +4,13 @@
 
 A basic eCommerce simulator app.
 
-- Redux - State Container.
-- React-Router - Dynamic Routing.
-- Webpack - module bundler.
-- Babel - JavaScript compiler.
-- ES6/ES7 - Javascript syntax.
-- CSS Module - Component styling.
+- React.
+- Redux.
+- React-Router.
+- Webpack.
+- Babel.
+- ES6/ES7.
+- CSS Module.
 
 ### Clone the repo
 
