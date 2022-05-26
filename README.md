@@ -32,4 +32,5 @@ yarn start
 
 ### Deployed 🚀:
 
-https://sungkimcastro.github.io/e-commerce/
+https://sj-kc.github.io/e-commerce/
+
