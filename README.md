@@ -15,7 +15,7 @@ A basic eCommerce simulator app.
 ### Clone the repo
 
 ```bash
-git clone https://github.com/sungkimcastro/e-commerce.git
+git clone https://github.com/sj-kc/e-commerce.git
 ```
 
 ### Install dependencies
